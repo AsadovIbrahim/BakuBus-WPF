@@ -120,6 +120,7 @@ namespace BakuBus.Views
                 if (buses is Pushpin p)
                 {
                     p.Visibility = Visibility.Visible;
+                    comboBox.SelectedIndex = 0 - 1;
                 }
             }
         }
