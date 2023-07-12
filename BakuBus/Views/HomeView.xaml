@@ -1,0 +1,39 @@
+﻿<Window x:Class="BakuBus.Views.HomeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BakuBus" xmlns:map="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+
+        mc:Ignorable="d"
+        Title="BakuBus" Height="450" Width="800" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Background="red">
+            <StackPanel Orientation="Vertical">
+                <Border Background="#fff" Height="120">
+                    <Image Source="/Static Files/Images/logo.png"/>
+                </Border>
+
+                <ComboBox x:Name="comboBox" Margin="0,30,0,0" Height="40" ItemsSource="{Binding MyBuses.BUS}" SelectedItem="{Binding SelectedBus}"/>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Reset" Style="{StaticResource resetButton}" Margin="0,30,0,0" Width="80" Height="50" Click="Reset_Click"/>
+                <Button Content="Search" Style="{StaticResource searchButton}" Margin="20,30,0,0" Width="80" Height="50" Click="Search_Click"/>
+            </StackPanel>
+        </Grid>
+        
+        <Grid Grid.Column="1">
+            <map:Map x:Name="myMap"  Center="40.41507631418173, 49.85335487708677" Mode="Road" ZoomLevel="11">
+            </map:Map> 
+        </Grid>
+    </Grid>
+</Window>
