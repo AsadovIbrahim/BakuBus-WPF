@@ -23,11 +23,11 @@
 
                 <ComboBox x:Name="comboBox" Margin="0,30,0,0" Height="40" ItemsSource="{Binding MyBuses.BUS}" SelectedItem="{Binding SelectedBus}"/>
 
-            </StackPanel>
 
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Content="Reset" Style="{StaticResource resetButton}" Margin="0,30,0,0" Width="80" Height="50" Click="Reset_Click"/>
-                <Button Content="Search" Style="{StaticResource searchButton}" Margin="20,30,0,0" Width="80" Height="50" Click="Search_Click"/>
+                <Button Content="Search"  Style="{StaticResource searchButton}" Margin="20,30,0,0" Width="80" Height="50" Click="Search_Click"/>
+            </StackPanel>
             </StackPanel>
         </Grid>
         
